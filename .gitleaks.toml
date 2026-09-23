@@ -1,0 +1,9 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Public SHA-256 digests of proof artifacts in the official contracts list"
+condition = "AND"
+paths = ['''(^|/)contracts\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"(register|transfer|withdraw)\.(wasm|zkey|vkey\.json)":\ "[0-9a-f]{64}",?$''']

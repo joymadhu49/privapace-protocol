@@ -1,0 +1,27 @@
+{
+  "name": "privapace-operator",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Read-only PrivaPace operator for Arc Testnet: indexes vault events and publishes comparable history checkpoints.",
+  "type": "module",
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "compare": "tsx scripts/compare-operators.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "pg": "^8.16.3",
+    "viem": "^2.38.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,3 @@
+# pnpm 11+: native install scripts are opt-in. tsx needs esbuild's.
+allowBuilds:
+  esbuild: true

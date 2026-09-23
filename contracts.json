@@ -1,0 +1,123 @@
+{
+  "schema": "privapace-contracts-v1",
+  "status": "Arc testnet development deployment. Test tokens only; not approved for real funds.",
+  "network": "testnet",
+  "chainId": 5042002,
+  "explorerUrl": "https://explorer.testnet.arc.io",
+  "asset": {
+    "symbol": "USDC",
+    "address": "0x3600000000000000000000000000000000000000",
+    "decimals": 6
+  },
+  "contracts": [
+    {
+      "name": "ConfidentialAssetVault",
+      "role": "USDC confidential vault: holds deposits, verifies proofs",
+      "address": "0x26e632294D526CF2C036C8427E3d1a21928D3ccA",
+      "fromBlock": "62731897",
+      "explorer": "https://explorer.testnet.arc.io/address/0x26e632294D526CF2C036C8427E3d1a21928D3ccA",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0x26e632294D526CF2C036C8427E3d1a21928D3ccA"
+      },
+      "runtimeBytecodeSha256": "dafc96dd0b5458a6addb677769efc06960568fff3f61d1a977f622ac6bdc609a"
+    },
+    {
+      "name": "AssetRegistry",
+      "role": "Supported assets and verifier versions",
+      "address": "0xF175EfD8a1C83e3c63212CD31e1bCFf36d9b30D6",
+      "explorer": "https://explorer.testnet.arc.io/address/0xF175EfD8a1C83e3c63212CD31e1bCFf36d9b30D6",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0xf175efd8a1c83e3c63212cd31e1bcff36d9b30d6"
+      },
+      "runtimeBytecodeSha256": "7d30bfc90bb5c75328cca56e9d2aca0abbc2282b093b7a0711e33d7f9caafb12"
+    },
+    {
+      "name": "ConfidentialVaultFactory",
+      "role": "Creates vaults",
+      "address": "0x75593C7616b60C40715970D789BAD7B2B0c78a66",
+      "explorer": "https://explorer.testnet.arc.io/address/0x75593C7616b60C40715970D789BAD7B2B0c78a66",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0x75593c7616b60c40715970d789bad7b2b0c78a66"
+      },
+      "runtimeBytecodeSha256": "22da1e8cfcf2efd2935e80ff3205fa12afcc5255a691b9ab37a1d870a958d842"
+    },
+    {
+      "name": "TransferVerifier",
+      "role": "Groth16 verifier for confidential transfers",
+      "address": "0x2ed31e0D60d2Fdac9ae8FF1e9DAaD9b9198f00A1",
+      "explorer": "https://explorer.testnet.arc.io/address/0x2ed31e0D60d2Fdac9ae8FF1e9DAaD9b9198f00A1",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0x2ed31e0d60d2fdac9ae8ff1e9daad9b9198f00a1"
+      },
+      "runtimeBytecodeSha256": "bf61a186b3d5255680d1ef36d1b5027a112dca3b12d77cb8aeb41bca9fd0811b"
+    },
+    {
+      "name": "WithdrawVerifier",
+      "role": "Groth16 verifier for withdrawals",
+      "address": "0x113310866372Ff6656Fe51FA8C91C6095e45C8d9",
+      "explorer": "https://explorer.testnet.arc.io/address/0x113310866372Ff6656Fe51FA8C91C6095e45C8d9",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0x113310866372ff6656fe51fa8c91c6095e45c8d9"
+      },
+      "runtimeBytecodeSha256": "0f77ff605ffe090d878d080668ae47d02865a10827df2f86b6de700eda8516ee"
+    },
+    {
+      "name": "RegisterVerifier",
+      "role": "Groth16 verifier for viewing-key registration",
+      "address": "0x2af44caF7a27A26b0b0DD7F57959d850443bb6e7",
+      "explorer": "https://explorer.testnet.arc.io/address/0x2af44caF7a27A26b0b0DD7F57959d850443bb6e7",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0x2af44caf7a27a26b0b0dd7f57959d850443bb6e7"
+      },
+      "runtimeBytecodeSha256": "9021c2e0b9f6702666d1f5695def0a2f48799de6e31045719d14ca74a08335a3"
+    },
+    {
+      "name": "ConfidentialPaymentFactory",
+      "role": "Private payment links",
+      "address": "0xebeBd48733abC499a98C680b674694E95C3c11c1",
+      "fromBlock": "62761943",
+      "explorer": "https://explorer.testnet.arc.io/address/0xebeBd48733abC499a98C680b674694E95C3c11c1",
+      "source": {
+        "verifier": "Sourcify",
+        "match": "exact_match",
+        "url": "https://repo.sourcify.dev/5042002/0xebebd48733abc499a98c680b674694e95c3c11c1"
+      },
+      "runtimeBytecodeSha256": "d4f1d1c1f5f6d0c58d1ba713cf01b852224bcc8eae431a389f25f4249c5c72a0"
+    }
+  ],
+  "proofArtifacts": {
+    "revision": "saberent-v2-128",
+    "ceremony": "development (not a production trusted setup)",
+    "sha256": {
+      "register.vkey.json": "793028165ef5a7038250d597ff192c7670fe092a677a97962e79b46b0359c513",
+      "register.wasm": "776d1bdbb3b5eed707d706b792a2fdc95b3c22190aa4c153ce477b726b42f2d4",
+      "register.zkey": "9f4464a3801ace7836ccd52a3aadf65b81f1de4cb63fbb63d6de0dd8522970ac",
+      "transfer.vkey.json": "42b0f0b0392f3115de9f504e90ab5c272dc1e8aa238aa2f4bc524666947a7cd8",
+      "transfer.wasm": "f42ac7efcbe5abde9f4c583f183d1841aa0dd90e16b71e5af6216cfb95facda6",
+      "transfer.zkey": "f931481dde5f963f04339546d298af4d18152020b62d906094b4431ca1241dc0",
+      "withdraw.vkey.json": "526a5ee3ef756210f79519a0c60862097ed6c8f2b52224ef52548dd2f2d3aa99",
+      "withdraw.wasm": "1c55b3ca22aec968d562567256c9bc3964699806581e34e651141997e3de5c42",
+      "withdraw.zkey": "3a6b78817ad270e76458c2daba3b409f632e828f360b95126cbbc057411744d1"
+    }
+  },
+  "operator": {
+    "manifest": "deployments/testnet.operator.json",
+    "scope": "1d476532b385c493a45d85e5f5ca67aa97cbb0d7c38c32e75e7044dbd27cba02",
+    "checkpointAlgorithm": "privapace-history-v1"
+  },
+  "canonicalUrl": "https://privapace.xyz/contracts.json",
+  "signature": null,
+  "howToVerify": "Compare these addresses with the explorer and Sourcify links, recompute runtimeBytecodeSha256 from eth_getCode, and compare operator checkpoints. This file is not yet signed; treat any copy that differs from the canonical URL as untrusted."
+}

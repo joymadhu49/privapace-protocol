@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 2,
+  "artifactRevision": "saberent-v2-128",
+  "amountBits": 128,
+  "chainId": 5042002,
+  "network": "testnet",
+  "rpcUrl": "https://rpc.testnet.arc.io/",
+  "devOnly": true,
+  "explorerUrl": "https://explorer.testnet.arc.io",
+  "registry": "0xf175efd8a1c83e3c63212cd31e1bcff36d9b30d6",
+  "factory": "0x75593c7616b60c40715970d789bad7b2b0c78a66",
+  "verifiers": {
+    "transfer": "0x2ed31e0d60d2fdac9ae8ff1e9daad9b9198f00a1",
+    "withdraw": "0x113310866372ff6656fe51fa8c91c6095e45c8d9",
+    "register": "0x2af44caf7a27a26b0b0dd7f57959d850443bb6e7"
+  },
+  "vaults": [
+    {
+      "id": "usdc-public-v2",
+      "address": "0x26e632294D526CF2C036C8427E3d1a21928D3ccA",
+      "underlying": "0x3600000000000000000000000000000000000000",
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "decimals": 6,
+      "verifierVersion": 2,
+      "fromBlock": "62731897",
+      "policy": "public",
+      "cap": "1000000000000",
+      "abi": [
+        {
+          "type": "constructor",
+          "inputs": [
+            {
+              "name": "registry_",
+              "type": "address",
+              "internalType": "contract AssetRegistry"
+            },
+            {
+              "name": "asset_",
+              "type": "address",
+              "internalType": "contract IERC20"
+            },
+            {
+              "name": "verifierVersion_",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "policy_",
+              "type": "uint8",
+              "internalType": "enum ConfidentialAssetVault.Policy"
+            },
+            {
+              "name": "cap_",
+              "type": "uint128",
+              "internalType": "uint128"
+            },
+            {
+              "name": "auditorKey_",
+              "type": "uint256[2]",
+              "internalType": "uint256[2]"
+            }
+          ],
+          "stateMutability": "nonpayable"
+        },
+        {
+          "type": "function",
+          "name": "ARC_USDC",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "MAX_AMOUNT",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "asset",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract IERC20"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "assetDecimals",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint8",
+              "internalType": "uint8"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "auditorKey",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "x",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "y",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "availableCommitment",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "x",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "y",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "confidentialTransfer",
+          "inputs": [
+            {
+              "name": "to",
+              "type": "address",
+              "internalType": "address"
+            },
+            {
+              "name": "proof",
+              "type": "tuple",
+              "internalType": "struct Proof",
+              "components": [
+                {
+                  "name": "a",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "b",
+                  "type": "uint256[2][2]",
+                  "internalType": "uint256[2][2]"
+                },
+                {
+                  "name": "c",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                }
+              ]
+            },
+            {
+              "name": "data",
+              "type": "tuple",
+              "internalType": "struct ConfidentialAssetVault.TransferProofData",
+              "components": [
+                {
+                  "name": "amountCommitment",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "recipientEphemeralPk",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "recipientCiphertext",
+                  "type": "uint256[3]",
+                  "internalType": "uint256[3]"
+                },
+                {
+                  "name": "auditorEphemeralPk",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "auditorCiphertext",
+                  "type": "uint256[3]",
+                  "internalType": "uint256[3]"
+                },
+                {
+                  "name": "senderEphemeralPk",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "senderCiphertext",
+                  "type": "uint256[3]",
+                  "internalType": "uint256[3]"
+                }
+              ]
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable"
+        },
+        {
+          "type": "function",
+          "name": "deposit",
+          "inputs": [
+            {
+              "name": "amount",
+              "type": "uint128",
+              "internalType": "uint128"
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable"
+        },
+        {
+          "type": "function",
+          "name": "disclosureKeyOf",
+          "inputs": [
+            {
+              "name": "sender",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "x",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "y",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "nonceOf",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "pendingCommitment",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "x",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "y",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "policy",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint8",
+              "internalType": "enum ConfidentialAssetVault.Policy"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "registerVerifier",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract IRegisterVerifier"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "registerViewingKey",
+          "inputs": [
+            {
+              "name": "proof",
+              "type": "tuple",
+              "internalType": "struct Proof",
+              "components": [
+                {
+                  "name": "a",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "b",
+                  "type": "uint256[2][2]",
+                  "internalType": "uint256[2][2]"
+                },
+                {
+                  "name": "c",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                }
+              ]
+            },
+            {
+              "name": "viewingPk",
+              "type": "uint256[2]",
+              "internalType": "uint256[2]"
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable"
+        },
+        {
+          "type": "function",
+          "name": "registry",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract AssetRegistry"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "rollPending",
+          "inputs": [
+            {
+              "name": "expectedPending",
+              "type": "uint256[2]",
+              "internalType": "uint256[2]"
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable"
+        },
+        {
+          "type": "function",
+          "name": "totalAccounted",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "transferVerifier",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract ITransferVerifier"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "underlying",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "vaultCap",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint128",
+              "internalType": "uint128"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "verifierVersion",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint32",
+              "internalType": "uint32"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "viewingKeyOf",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "internalType": "address"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "x",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "y",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "withdraw",
+          "inputs": [
+            {
+              "name": "amount",
+              "type": "uint128",
+              "internalType": "uint128"
+            },
+            {
+              "name": "proof",
+              "type": "tuple",
+              "internalType": "struct Proof",
+              "components": [
+                {
+                  "name": "a",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                },
+                {
+                  "name": "b",
+                  "type": "uint256[2][2]",
+                  "internalType": "uint256[2][2]"
+                },
+                {
+                  "name": "c",
+                  "type": "uint256[2]",
+                  "internalType": "uint256[2]"
+                }
+              ]
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable"
+        },
+        {
+          "type": "function",
+          "name": "withdrawVerifier",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract IWithdrawVerifier"
+            }
+          ],
+          "stateMutability": "view"
+        },
+        {
+          "type": "event",
+          "name": "ConfidentialTransfer",
+          "inputs": [
+            {
+              "name": "from",
+              "type": "address",
+              "indexed": true,
+              "internalType": "address"
+            },
+            {
+              "name": "to",
+              "type": "address",
+              "indexed": true,
+              "internalType": "address"
+            },
+            {
+              "name": "nonce",
+              "type": "uint256",
+              "indexed": false,
+              "internalType": "uint256"
+            },
+            {
+              "name": "amountCommitment",
+              "type": "uint256[2]",
+              "indexed": false,
+              "internalType": "uint256[2]"
+            },
+            {
+              "name": "recipientEphemeralPk",
+              "type": "uint256[2]",
+              "indexed": false,
+              "internalType": "uint256[2]"
+            },
+            {
+              "name": "recipientCiphertext",
+              "type": "uint256[3]",
+              "indexed": false,
+              "internalType": "uint256[3]"
+            },
+            {
+              "name": "auditorEphemeralPk",
+              "type": "uint256[2]",
+              "indexed": false,
+              "internalType": "uint256[2]"
+            },
+            {
+              "name": "auditorCiphertext",
+              "type": "uint256[3]",
+              "indexed": false,
+              "internalType": "uint256[3]"
+            },
+            {
+              "name": "senderEphemeralPk",
+              "type": "uint256[2]",
+              "indexed": false,
+              "internalType": "uint256[2]"
+            },
+            {
+              "name": "senderCiphertext",
+              "type": "uint256[3]",
+              "indexed": false,
+              "internalType": "uint256[3]"
+            }
+          ],
+          "anonymous": false
+        },
+        {
+          "type": "event",
+          "name": "Deposit",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "indexed": true,
+              "internalType": "address"
+            },
+            {
+              "name": "amount",
+              "type": "uint128",
+              "indexed": false,
+              "internalType": "uint128"
+            }
+          ],
+          "anonymous": false
+        },
+        {
+          "type": "event",
+          "name": "PendingRolled",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "indexed": true,
+              "internalType": "address"
+            },
+            {
+              "name": "rolled",
+              "type": "uint256[2]",
+              "indexed": false,
+              "internalType": "uint256[2]"
+            }
+          ],
+          "anonymous": false
+        },
+        {
+          "type": "event",
+          "name": "ViewingKeyRegistered",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "indexed": true,
+              "internalType": "address"
+            },
+            {
+              "name": "pkX",
+              "type": "uint256",
+              "indexed": false,
+              "internalType": "uint256"
+            },
+            {
+              "name": "pkY",
+              "type": "uint256",
+              "indexed": false,
+              "internalType": "uint256"
+            }
+          ],
+          "anonymous": false
+        },
+        {
+          "type": "event",
+          "name": "Withdrawal",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "indexed": true,
+              "internalType": "address"
+            },
+            {
+              "name": "amount",
+              "type": "uint128",
+              "indexed": false,
+              "internalType": "uint128"
+            }
+          ],
+          "anonymous": false
+        },
+        {
+          "type": "error",
+          "name": "AmountZero",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "AssetCallFailed",
+          "inputs": [
+            {
+              "name": "token",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        {
+          "type": "error",
+          "name": "DepositsDisabled",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "InvalidConfiguration",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "InvalidProof",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "InvalidViewingKey",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "InversionOfZero",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "IssuerBlocked",
+          "inputs": [
+            {
+              "name": "account",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        {
+          "type": "error",
+          "name": "ModExpFailed",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "NotOnCurve",
+          "inputs": [
+            {
+              "name": "x",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "y",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
+          "name": "NothingPending",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "PendingChanged",
+          "inputs": [
+            {
+              "name": "expectedX",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "expectedY",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "actualX",
+              "type": "uint256",
+              "internalType": "uint256"
+            },
+            {
+              "name": "actualY",
+              "type": "uint256",
+              "internalType": "uint256"
+            }
+          ]
+        },
+        {
+          "type": "error",
+          "name": "PoolCapacityExceeded",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "RecipientHasNoViewingKey",
+          "inputs": [
+            {
+              "name": "recipient",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        {
+          "type": "error",
+          "name": "Reentrancy",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "SenderHasNoViewingKey",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "UnexpectedAssetDelta",
+          "inputs": []
+        },
+        {
+          "type": "error",
+          "name": "ViewingKeyAlreadyRegistered",
+          "inputs": [
+            {
+              "name": "owner",
+              "type": "address",
+              "internalType": "address"
+            }
+          ]
+        },
+        {
+          "type": "error",
+          "name": "ZeroAddress",
+          "inputs": []
+        }
+      ]
+    }
+  ],
+  "fromBlock": "62731897"
+}

@@ -1,0 +1,4 @@
+node_modules/
+operator.env
+db_password.txt
+*.tsbuildinfo
